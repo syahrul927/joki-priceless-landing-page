@@ -12,6 +12,10 @@ const buttonVariants = cva(
 			variant: {
 				default:
 					"bg-main border-2 border-black shadow-base hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none",
+				ghost: "hover:bg-accent hover:text-accent-foreground",
+
+				secondary:
+					"bg-accent border-2 border-black shadow-base hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none",
 				noShadow: "bg-main border-2 border-black",
 				link: "underline-offset-4 hover:underline",
 				neutral: "bg-white border-2 border-black",
