@@ -54,7 +54,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function MenuHeader() {
 	return (
-		<NavigationMenu className="z-[5] m750:max-w-[300px] border-none">
+		<NavigationMenu className="z-[5] hidden md:block m750:max-w-[300px] border-none">
 			<NavigationMenuList className="m750:max-w-[300px]">
 				<NavigationMenuItem>
 					<NavigationMenuTrigger className="m750:max-w-[80px] m750:text-xs">
