@@ -19,12 +19,14 @@ import { Button } from "./ui/button"
 import { useState } from "react"
 import { Textarea } from "./ui/textarea"
 import { motion } from "framer-motion"
+import { useToast } from "./ui/use-toast"
 
 const FormRequest = () => {
 	const [name, setName] = useState("")
 	const [framework, setFramework] = useState("")
 	const [description, setDescription] = useState("")
 	const [list, setList] = useState<CardRequestProps[]>([])
+	const { toast } = useToast()
 
 	const clear = () => {
 		setName("")
@@ -33,6 +35,14 @@ const FormRequest = () => {
 	}
 
 	const onSubmit = () => {
+		if (!name || !framework) {
+			toast({
+				title: "Error!",
+				description: "Please fill the field!",
+				variant: "destructive",
+			})
+			return
+		}
 		setList([...list, { name, framework, description }])
 		clear()
 	}

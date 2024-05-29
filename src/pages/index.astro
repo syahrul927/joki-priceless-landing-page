@@ -1,5 +1,8 @@
 ---
 import FormRequest from "@/components/FormRequest"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { ToastProvider } from "@/components/ui/toast"
+import { Toaster } from "@/components/ui/toaster"
 import "@/styles/globals.css"
 ---
 
@@ -19,6 +22,7 @@ import "@/styles/globals.css"
 				</div>
 				<FormRequest client:visible />
 			</div>
+			<Toaster client:visible />
 		</main>
 	</body>
 </html>
