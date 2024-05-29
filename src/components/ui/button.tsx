@@ -19,6 +19,7 @@ const buttonVariants = cva(
 				noShadow: "bg-main border-2 border-black",
 				link: "underline-offset-4 hover:underline",
 				neutral: "bg-white border-2 border-black",
+				black: "bg-black border-2 text-secondary border-black",
 			},
 			size: {
 				default: "h-10 px-4 py-2",

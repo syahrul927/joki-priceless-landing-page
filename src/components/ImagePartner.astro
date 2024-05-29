@@ -1,0 +1,13 @@
+---
+interface Props {
+	alt?: string
+	src: string
+}
+const { alt, src } = Astro.props
+---
+
+<img
+	alt={alt}
+	src={src}
+	class="aspect-[3/2] object-contain grayscale mix-blend-multiply hover:mix-blend-multiply hover:opacity-100 hover:grayscale-0 transition-opacity duration-200 opacity-35"
+/>

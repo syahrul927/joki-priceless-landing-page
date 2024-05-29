@@ -1,0 +1,18 @@
+---
+import { Button } from "./ui/button"
+import MenuHeader from "./react/MenuHeader"
+---
+
+<nav
+	class="md:max-w-screen-xl max-w-screen-md items-center px-6 mt-6 sticky top-6 mx-auto w-full h-16 rounded-base shadow-base border-2 border-black bg-main text-black flex justify-between"
+>
+	<!-- logo -->
+	<div>
+		<p class="text-xl font-bold">JokiPriceless</p>
+	</div>
+	<div class="flex gap-3 items-center">
+		<MenuHeader client:visible />
+		<Button variant={"secondary"}>Contact Us</Button>
+	</div>
+	<!-- menu -->
+</nav>

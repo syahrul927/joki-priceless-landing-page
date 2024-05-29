@@ -1,9 +1,11 @@
 ---
-import FormRequest from "@/components/FormRequest"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ToastProvider } from "@/components/ui/toast"
+import "@fontsource-variable/space-grotesk"
+import FormRequest from "@/components/react/FormRequest"
+import Header from "@/components/Header.astro"
 import { Toaster } from "@/components/ui/toaster"
 import "@/styles/globals.css"
+import Hero from "@/components/Hero.astro"
+import Partnership from "@/components/Partnership.astro"
 ---
 
 <html lang="en">
@@ -15,10 +17,13 @@ import "@/styles/globals.css"
 		<title>Astro</title>
 	</head>
 	<body>
-		<main class="container py-12">
+		<Header />
+		<main class="container max-w-screen-xl py-12">
+			<Hero />
+			<Partnership />
 			<div class="max-w-screen-xl flex flex-col space-y-6">
 				<div class="w-full py-4">
-					<h1 class="font-semibold text-6xl">Joki Priceless</h1>
+					<h1 class="font-semibold text-6xl">Request Pembuatan</h1>
 				</div>
 				<FormRequest client:visible />
 			</div>

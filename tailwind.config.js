@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin")
 module.exports = {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	darkMode: ["class"],
@@ -12,6 +13,11 @@ module.exports = {
 			},
 		},
 		extend: {
+			textShadow: {
+				sm: "0 1px 2px var(--tw-shadow-color)",
+				DEFAULT: "0 2px 4px var(--tw-shadow-color)",
+				lg: "0 8px 16px var(--tw-shadow-color)",
+			},
 			colors: {
 				bg: "#F3F3F3",
 				main: "#B9FF66",
@@ -67,6 +73,10 @@ module.exports = {
 				heading: "700",
 			},
 			keyframes: {
+				"infinite-scroll": {
+					from: { transform: "translateX(0)" },
+					to: { transform: "translateX(-100%)" },
+				},
 				"accordion-down": {
 					from: { height: "0" },
 					to: { height: "var(--radix-accordion-content-height)" },
@@ -79,8 +89,22 @@ module.exports = {
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
+				"infinite-scroll": "infinite-scroll 25s linear infinite",
 			},
 		},
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+
+		plugin(function ({ matchUtilities, theme }) {
+			matchUtilities(
+				{
+					"text-shadow": (value) => ({
+						textShadow: value,
+					}),
+				},
+				{ values: theme("textShadow") }
+			)
+		}),
+	],
 }

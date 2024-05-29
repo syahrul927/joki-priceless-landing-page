@@ -5,7 +5,7 @@ import {
 	SelectValue,
 	SelectContent,
 	SelectItem,
-} from "./ui/select"
+} from "../ui/select"
 import {
 	Card,
 	CardHeader,
@@ -13,13 +13,13 @@ import {
 	CardDescription,
 	CardContent,
 	CardFooter,
-} from "./ui/card"
-import { Input } from "./ui/input"
-import { Button } from "./ui/button"
+} from "../ui/card"
+import { Input } from "../ui/input"
+import { Button } from "../ui/button"
 import { useState } from "react"
-import { Textarea } from "./ui/textarea"
+import { Textarea } from "../ui/textarea"
 import { motion } from "framer-motion"
-import { useToast } from "./ui/use-toast"
+import { useToast } from "../ui/use-toast"
 
 const FormRequest = () => {
 	const [name, setName] = useState("")
@@ -48,19 +48,17 @@ const FormRequest = () => {
 	}
 
 	return (
-		<div className="flex  space-x-3 ">
-			<Card className="w-[500px] h-fit">
+		<div className="flex py-12 md:flex-row gap-3 flex-col  ">
+			<Card className="md:w-[500px] w-full h-fit">
 				<CardHeader>
-					<CardTitle>Create project</CardTitle>
-					<CardDescription>
-						Deploy your new project in one-click.
-					</CardDescription>
+					<CardTitle>Informasi Projek</CardTitle>
+					<CardDescription>Deskripsikan kebutuhan kamu!</CardDescription>
 				</CardHeader>
 				<CardContent>
 					<form>
 						<div className="grid w-full items-center gap-4">
 							<div className="flex flex-col space-y-1.5">
-								<Label>Name</Label>
+								<Label>Nama Kamu</Label>
 								<Input
 									value={name}
 									onChange={(e) => setName(e.target.value)}
@@ -69,7 +67,7 @@ const FormRequest = () => {
 								/>
 							</div>
 							<div>
-								<Label>Framework</Label>
+								<Label>Jenis Aplikasi</Label>
 								<Select
 									value={framework}
 									onValueChange={(e) => setFramework(e)}
@@ -78,10 +76,10 @@ const FormRequest = () => {
 										<SelectValue placeholder="Select" />
 									</SelectTrigger>
 									<SelectContent position="popper">
-										<SelectItem value="nextjs">Next.js</SelectItem>
-										<SelectItem value="sveltekit">SvelteKit</SelectItem>
-										<SelectItem value="astro">Astro</SelectItem>
-										<SelectItem value="nuxt">Nuxt.js</SelectItem>
+										<SelectItem value="Website">Website</SelectItem>
+										<SelectItem value="Mobile App">Mobile App</SelectItem>
+										<SelectItem value="Desktop">Desktop</SelectItem>
+										<SelectItem value="Custom App">Custom App</SelectItem>
 									</SelectContent>
 								</Select>
 							</div>
@@ -102,7 +100,7 @@ const FormRequest = () => {
 					</Button>
 				</CardFooter>
 			</Card>
-			<div className="flex flex-col space-y-3 w-full max-h-[70dvh] overflow-y-auto pr-6">
+			<div className="flex flex-col space-y-3 w-full md:max-h-[70dvh] overflow-y-auto ">
 				{list.map((item) => (
 					<CardRequest {...item} key={item.name} />
 				))}
@@ -127,6 +125,7 @@ const CardRequest = (props: CardRequestProps) => {
 				opacity: 0.5,
 				x: -50,
 			}}
+			className="w-full"
 		>
 			<Card className="bg-accent">
 				<CardHeader className="">
