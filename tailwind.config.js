@@ -62,8 +62,8 @@ module.exports = {
 				base: "5px",
 			},
 			boxShadow: {
-				base: "4px 4px 0px 0px rgba(0,0,0,1)",
-				"base-white": "3px 3px 0px 0px white, 3px 3px 0px 1px black",
+				base: "5px 5px 0px 0px rgba(0,0,0,1)",
+				"base-white": "4px 4px 0px 0px white, 4px 4px 0px 1px black",
 			},
 			translate: {
 				boxShadowX: "4px",

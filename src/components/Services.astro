@@ -1,0 +1,45 @@
+---
+import {
+	AppWindow,
+	Browser,
+	DeviceMobile,
+	Student,
+} from "@phosphor-icons/react"
+import ServiceItem from "./ServiceItem.astro"
+import Heading from "./Heading.astro"
+---
+
+<div class="flex flex-col space-y-24 py-32">
+	<Heading
+		title="Service"
+		description=" Kami menawarkan berbagai layanan untuk membantu bisnis berkembang dan sukses secara online. Layanan-layanan ini meliput "
+	/>
+	<div class="w-full flex justify-center">
+		<div class="grid md:grid-cols-2 grow gap-6 max-w-screen-xl">
+			<ServiceItem
+				icon={AppWindow}
+				colorIcon="secondary"
+				description="Membangun Aplikasi Kustom yang Didesain khusus untuk Membantu Memperluas Jangkauan Bisnis Anda dan Meningkatkan Efisiensi Operasional."
+				title="Custom Application"
+			/>
+			<ServiceItem
+				icon={Browser}
+				colorIcon="main"
+				description="Membuat situs web dengan desain menarik dan fungsional untuk merepresentasikan identitas serta berbagai layanan yang ditawarkan oleh perusahaan Anda."
+				title="Web Company Profile"
+			/>
+			<ServiceItem
+				icon={DeviceMobile}
+				colorIcon="black"
+				description="Kami akan membuat sebuah aplikasi berbasis mobile yang akan sangat memudahkan Anda dalam mengakses berbagai layanan dan informasi yang Anda butuhkan."
+				title="Mobile App"
+			/>
+			<ServiceItem
+				icon={Student}
+				colorIcon="secondary"
+				description="Kamu juga dapat membantu untuk kamu yang kesulitan membuat program untuk tugas kuliah atau skripsi."
+				title="Tugas/Skripsi"
+			/>
+		</div>
+	</div>
+</div>

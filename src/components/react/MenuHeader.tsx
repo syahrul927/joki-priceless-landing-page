@@ -57,50 +57,15 @@ export default function MenuHeader() {
 		<NavigationMenu className="z-[5] hidden md:block m750:max-w-[300px] border-none">
 			<NavigationMenuList className="m750:max-w-[300px]">
 				<NavigationMenuItem>
-					<NavigationMenuTrigger className="m750:max-w-[80px] m750:text-xs">
-						<span className="m750:hidden">Getting started</span>
-						<span className="hidden m750:inline">Home</span>
-					</NavigationMenuTrigger>
-					<NavigationMenuContent>
-						<ul className="grid w-[500px] gap-3 p-6 lg:grid-cols-[.75fr_1fr] m750:w-[300px]">
-							<li className="row-span-3">
-								<NavigationMenuLink asChild>
-									<a
-										className="from-muted/50 to-muted flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b p-6 no-underline outline-none focus:shadow-md"
-										href="https://ui.shadcn.com"
-									>
-										<div className="mb-2 mt-4 text-lg font-heading">
-											shadcn/ui
-										</div>
-										<p className="text-muted-foreground text-sm font-base leading-tight">
-											Beautifully designed components that you can copy and
-											paste into your apps. Accessible. Customizable. Open
-											Source.
-										</p>
-									</a>
-								</NavigationMenuLink>
-							</li>
-							<ListItem href="https://ui.shadcn.com/docs" title="Introduction">
-								Re-usable components built using Radix UI and Tailwind CSS.
-							</ListItem>
-							<ListItem
-								href="https://ui.shadcn.com/docs/installation"
-								title="Installation"
-							>
-								How to install dependencies and structure your app.
-							</ListItem>
-							<ListItem
-								href="https://ui.shadcn.com/docs/primitives/typography"
-								title="Typography"
-							>
-								Styles for headings, paragraphs, lists...etc
-							</ListItem>
-						</ul>
-					</NavigationMenuContent>
+					<a href="/portfolio">
+						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+							<span className="m750:max-w-[80px] m750:text-xs">Portofolio</span>
+						</NavigationMenuLink>
+					</a>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
 					<NavigationMenuTrigger className="m750:max-w-[80px] m750:text-xs">
-						Components
+						Referensi
 					</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">

@@ -1,0 +1,60 @@
+---
+import { cn } from "@/lib/utils"
+import { ArrowCircleUpRight, type Icon } from "@phosphor-icons/react"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card"
+import { Button } from "./ui/button"
+
+interface Props {
+	icon: Icon
+	colorIcon: string
+	title: string
+	description: string
+}
+const props = Astro.props
+const colorPicker = (str: string) => {
+	switch (str) {
+		case "main":
+			return {
+				bg: "bg-main hover:bg-white",
+				text: "text-black",
+				clip: "bg-white",
+			}
+		case "secondary":
+			return {
+				bg: "bg-secondary hover:bg-white",
+				text: "text-black",
+				clip: "bg-main",
+			}
+		default:
+			return {
+				bg: "bg-black hover:bg-white",
+				text: "text-white hover:text-black",
+				clip: "bg-white",
+			}
+	}
+}
+const color = colorPicker(props.colorIcon)
+---
+
+<Card
+	className={cn(
+		"aspect-[5/2] min-h-full cursor-pointer overflow-hidden",
+		`${color.bg} ${color.text}`
+	)}
+>
+	<CardHeader>
+		<props.icon weight="fill" size={32} />
+		<CardTitle>{props.title}</CardTitle>
+	</CardHeader>
+	<CardContent>
+		<p class="sm:line-clamp-2 line-clamp-1">
+			{props.description}
+		</p>
+	</CardContent>
+	<CardFooter>
+		<p class="inline">Lihat Detail</p><ArrowCircleUpRight
+			size={24}
+			className="mx-1"
+		/>
+	</CardFooter>
+</Card>
