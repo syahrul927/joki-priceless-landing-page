@@ -3,9 +3,11 @@ import { cn } from "@/lib/utils"
 import { ArrowCircleUpRight, type Icon } from "@phosphor-icons/react"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card"
 import { Button } from "./ui/button"
+import HighlightTitle from "./HighlightTitle.astro"
+import Image from "astro/components/Image.astro"
 
 interface Props {
-	icon: Icon
+	image: string
 	colorIcon: string
 	title: string
 	description: string
@@ -17,19 +19,19 @@ const colorPicker = (str: string) => {
 			return {
 				bg: "bg-main hover:bg-white",
 				text: "text-black",
-				clip: "bg-white",
+				clip: "white",
 			}
 		case "secondary":
 			return {
 				bg: "bg-secondary hover:bg-white",
 				text: "text-black",
-				clip: "bg-main",
+				clip: "main",
 			}
 		default:
 			return {
 				bg: "bg-black hover:bg-white",
 				text: "text-white hover:text-black",
-				clip: "bg-white",
+				clip: "white",
 			}
 	}
 }
@@ -38,18 +40,17 @@ const color = colorPicker(props.colorIcon)
 
 <Card
 	className={cn(
-		"aspect-[5/2] min-h-full cursor-pointer overflow-hidden",
+		"min-h-full cursor-pointer pt-10 overflow-hidden",
 		`${color.bg} ${color.text}`
 	)}
 >
-	<CardHeader>
-		<props.icon weight="fill" size={32} />
-		<CardTitle>{props.title}</CardTitle>
-	</CardHeader>
-	<CardContent>
-		<p class="sm:line-clamp-2 line-clamp-1">
-			{props.description}
-		</p>
+	<CardContent className="flex-row flex">
+		<CardTitle className="text-4xl flex-1">
+			<HighlightTitle color={color.clip}>{props.title}</HighlightTitle>
+		</CardTitle>
+		<div class="px-6 hidden md:block">
+			<Image width="200" height="200" src={props.image} alt={props.title} />
+		</div>
 	</CardContent>
 	<CardFooter>
 		<p class="inline">Lihat Detail</p><ArrowCircleUpRight

@@ -1,15 +1,18 @@
 ---
+import HighlightTitle from "./HighlightTitle.astro"
 import { Button } from "./ui/button"
 ---
 
-<div class="w-full md:min-h-[50dvh] flex justify-center items-center">
+<div class="w-full md:min-h-[70dvh] flex justify-center items-center">
 	<div
 		class="flex flex-col items-center text-center justify-center md:max-w-2xl space-y-4"
 	>
-		<h1>Selamat datang di JokiPriceless!</h1>
+		<h1>
+			Solusi untuk <HighlightTitle>Meningkatkan</HighlightTitle> Bisnis Anda
+		</h1>
 		<p>
-			Kami adalah agensi pengembangan perangkat lunak yang siap membantu Anda
-			mewujudkan ide-ide inovatif Anda.
+			<span class="font-bold">JokiPriceless</span> adalah agensi pengembangan web
+			dan aplikasi yang siap membantu Anda mewujudkan bisnis Anda.
 		</p>
 		<div class="flex w-fit gap-3">
 			<Button variant={"black"}>Lihat lebih lanjut</Button>

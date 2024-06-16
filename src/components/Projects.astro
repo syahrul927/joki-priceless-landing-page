@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets"
+import Heading from "./Heading.astro"
+
+//dummy
+const projects = [
+	{
+		title: "Project 1",
+		thumbnail: "https://picsum.photos/800",
+		description:
+			"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas amet nihil doloremque deserunt aperiam necessitatibus, alias corporis assumenda iure laudantium beatae enim nemo dolores nostrum error non officiis sequi molestias!  ",
+	},
+	{
+		title: "Project 2",
+		thumbnail: "https://picsum.photos/800",
+		description:
+			"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas amet nihil doloremque deserunt aperiam necessitatibus, alias corporis assumenda iure laudantium beatae enim nemo dolores nostrum error non officiis sequi molestias!  ",
+	},
+	{
+		title: "Project 3",
+		thumbnail: "https://picsum.photos/800",
+		description:
+			"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas amet nihil doloremque deserunt aperiam necessitatibus, alias corporis assumenda iure laudantium beatae enim nemo dolores nostrum error non officiis sequi molestias!  ",
+	},
+	{
+		title: "Project 4",
+		thumbnail: "https://picsum.photos/800",
+		description:
+			"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas amet nihil doloremque deserunt aperiam necessitatibus, alias corporis assumenda iure laudantium beatae enim nemo dolores nostrum error non officiis sequi molestias!  ",
+	},
+	{
+		title: "Project 5",
+		thumbnail: "https://picsum.photos/800",
+		description:
+			"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas amet nihil doloremque deserunt aperiam necessitatibus, alias corporis assumenda iure laudantium beatae enim nemo dolores nostrum error non officiis sequi molestias!  ",
+	},
+	{
+		title: "Project 6",
+		thumbnail: "https://picsum.photos/800",
+		description:
+			"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas amet nihil doloremque deserunt aperiam necessitatibus, alias corporis assumenda iure laudantium beatae enim nemo dolores nostrum error non officiis sequi molestias!  ",
+	},
+]
+---
+
+<div class="flex flex-col space-y-6 md:space-y-24 py-32">
+	<Heading
+		title="Projects"
+		description="Project yang pernah kami kerjakan untuk membantu bisnis client kami"
+	/>
+	<div class="flex justify-center w-full">
+		<div class="grid md:grid-cols-3 gap-6">
+			{
+				projects.map((project) => (
+					<div class="transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none rounded-base shadow-base border-2 border-black group relative w-[300px] h-[300px] overflow-hidden cursor-pointer">
+						<Image
+							class="group-hover:brightness-50 absolute"
+							src={project.thumbnail}
+							width={300}
+							height={300}
+							alt={project.title}
+						/>
+						<div class="bg-main p-4 absolute group-hover:translate-y-0 transition-all duration-100 translate-y-32 bottom-0 w-full">
+							<p>{project.title}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</div>

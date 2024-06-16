@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets"
+import { Button } from "./ui/button"
+---
+
+<div class="w-full rounded-3xl py-12 px-12 bg-secondary flex">
+	<div class="flex-1 flex flex-col space-y-6">
+		<h2>Ayo wujudkan bisnismu</h2>
+		<p class="max-w-lg">
+			Hubungi kita sekarang untuk tanya-tanya atau ingin tau bagaimana proses
+			bekerja sama dengan kita.
+		</p>
+		<div>
+			<Button variant={"black"}>Buat Project Kamu</Button>
+		</div>
+	</div>
+	<Image
+		src="/images/assets/contact-us.png"
+		class={"md:block hidden"}
+		alt={"contact-us"}
+		width="200"
+		height="200"
+	/>
+</div>
