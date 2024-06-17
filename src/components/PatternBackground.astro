@@ -2,15 +2,21 @@
 import { cn } from "@/lib/utils"
 
 interface Props {
-	position?: "right" | "left"
+	position?: "right" | "left" | "center"
+	class?: string
 }
-const { position = "left" } = Astro.props
+const { position = "left", class: className } = Astro.props
 ---
 
 <div
 	class={cn(
-		"absolute -z-10 h-full top-0 inset-0  w-full bg-white bg-[radial-gradient(#e5e7eb_3px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]",
-		position === "right" ? "translate-x-[40%]" : "-translate-x-[40%]"
+		"absolute -z-10 h-full inset-0 w-full bg-white bg-[radial-gradient(#e5e7eb_3px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]",
+		position === "right"
+			? "translate-x-[40%]"
+			: position === "center"
+				? "translate-x-0 inset-0"
+				: "-translate-x-[40%]",
+		className
 	)}
 >
 </div>

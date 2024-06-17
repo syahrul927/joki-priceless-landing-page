@@ -1,17 +1,15 @@
 ---
 import HighlightTitle from "./HighlightTitle.astro"
+import PatternBackground from "./PatternBackground.astro"
 import HeroTitle from "./react/HeroTitle"
 import { Button } from "./ui/button"
 ---
 
-<div class="w-full min-h-[70dvh] flex justify-center items-center">
+<div class="w-full min-h-[70dvh] flex justify-center relative items-center">
 	<div
 		class="flex flex-col items-center text-center justify-center md:max-w-2xl space-y-4"
 	>
 		<HeroTitle client:visible />
-		<!-- <h1>
-			Solusi untuk Mewujudkan <HighlightTitle>Mimpi</HighlightTitle> Anda
-		</h1> -->
 		<p>
 			<span class="font-bold">JokiPriceless</span> adalah agensi pengembangan web
 			dan aplikasi yang siap membantu mewujudkan keinginan Anda.
@@ -20,4 +18,5 @@ import { Button } from "./ui/button"
 			<Button variant={"black"}>Hubungi Kami</Button>
 		</div>
 	</div>
+	<PatternBackground position="center" class="top-0 -translate-y-[20%]" />
 </div>
