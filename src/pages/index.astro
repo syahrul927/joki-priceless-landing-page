@@ -10,6 +10,7 @@ import Services from "@/components/Services.astro"
 import Contactus from "@/components/Contactus.astro"
 import Footer from "@/components/Footer.astro"
 import Projects from "@/components/Projects.astro"
+import { TailwindIndicator } from "@/components/react/tailwind-indicator"
 ---
 
 <html lang="en">
@@ -21,11 +22,11 @@ import Projects from "@/components/Projects.astro"
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 		<title>Astro</title>
 	</head>
-	<body>
+	<body class="bg-white">
 		<Header />
 		<Hero />
 		<Partnership />
-		<main class="container max-w-screen-xl py-12">
+		<main>
 			<Services />
 			<Projects />
 			<Contactus />
@@ -38,5 +39,6 @@ import Projects from "@/components/Projects.astro"
 			<Toaster client:visible /> -->
 		</main>
 		<Footer />
+		<TailwindIndicator client:visible />
 	</body>
 </html>

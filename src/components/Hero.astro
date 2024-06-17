@@ -1,21 +1,23 @@
 ---
 import HighlightTitle from "./HighlightTitle.astro"
+import HeroTitle from "./react/HeroTitle"
 import { Button } from "./ui/button"
 ---
 
-<div class="w-full md:min-h-[70dvh] flex justify-center items-center">
+<div class="w-full min-h-[70dvh] flex justify-center items-center">
 	<div
 		class="flex flex-col items-center text-center justify-center md:max-w-2xl space-y-4"
 	>
-		<h1>
-			Solusi untuk <HighlightTitle>Meningkatkan</HighlightTitle> Bisnis Anda
-		</h1>
+		<HeroTitle client:visible />
+		<!-- <h1>
+			Solusi untuk Mewujudkan <HighlightTitle>Mimpi</HighlightTitle> Anda
+		</h1> -->
 		<p>
 			<span class="font-bold">JokiPriceless</span> adalah agensi pengembangan web
-			dan aplikasi yang siap membantu Anda mewujudkan bisnis Anda.
+			dan aplikasi yang siap membantu mewujudkan keinginan Anda.
 		</p>
 		<div class="flex w-fit gap-3">
-			<Button variant={"black"}>Lihat lebih lanjut</Button>
+			<Button variant={"black"}>Hubungi Kami</Button>
 		</div>
 	</div>
 </div>

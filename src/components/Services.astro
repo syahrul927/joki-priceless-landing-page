@@ -1,39 +1,44 @@
 ---
+import ContainerLayout from "./ContainerLayout.astro"
 import Heading from "./Heading.astro"
+import PatternBackground from "./PatternBackground.astro"
 import ServiceItem from "./ServiceItem.astro"
 ---
 
-<div class="flex flex-col space-y-6 md:space-y-24 py-32">
-	<Heading
-		title="Layanan"
-		description="Kami menawarkan berbagai layanan untuk membantu bisnis berkembang dan sukses secara online. Layanan-layanan ini meliput "
-	/>
-	<div class="w-full flex justify-center">
-		<div class="grid md:grid-cols-2 grow gap-6 max-w-screen-xl">
-			<ServiceItem
-				colorIcon="secondary"
-				image={"/images/assets/service-web-app.png"}
-				description="Membangun Aplikasi Kustom yang Didesain khusus untuk Membantu Memperluas Jangkauan Bisnis Anda dan Meningkatkan Efisiensi Operasional."
-				title="Web Company Profile"
-			/>
-			<ServiceItem
-				image={"/images/assets/service-custom-app.png"}
-				colorIcon="main"
-				description="Membuat situs web dengan desain menarik dan fungsional untuk merepresentasikan identitas serta berbagai layanan yang ditawarkan oleh perusahaan Anda."
-				title="Custom Web Application"
-			/>
-			<ServiceItem
-				image={"/images/assets/service-mobile.png"}
-				colorIcon="black"
-				description="Kami akan membuat sebuah aplikasi berbasis mobile yang akan sangat memudahkan Anda dalam mengakses berbagai layanan dan informasi yang Anda butuhkan."
-				title="Mobile Application"
-			/>
-			<ServiceItem
-				image={"/images/assets/service-tugas.png"}
-				colorIcon="secondary"
-				description="Kamu juga dapat membantu untuk kamu yang kesulitan membuat program untuk tugas kuliah atau skripsi."
-				title="Pembuatan Tugas/Skripsi"
-			/>
+<ContainerLayout>
+	<div class="flex flex-col space-y-6 md:space-y-12 py-32">
+		<Heading
+			title="Layanan"
+			description="Kami menawarkan berbagai layanan untuk membantu bisnis berkembang dan sukses secara online. Layanan-layanan ini meliput "
+		/>
+		<PatternBackground />
+		<div class="w-full flex justify-center">
+			<div class="grid md:grid-cols-2 grow gap-6 max-w-screen-xl">
+				<ServiceItem
+					colorIcon="secondary"
+					image={"/images/assets/service-web-app.png"}
+					description="Membangun Aplikasi Kustom yang Didesain khusus untuk Membantu Memperluas Jangkauan Bisnis Anda dan Meningkatkan Efisiensi Operasional."
+					title="Web Company Profile"
+				/>
+				<ServiceItem
+					image={"/images/assets/service-custom-app.png"}
+					colorIcon="main"
+					description="Membuat situs web dengan desain menarik dan fungsional untuk merepresentasikan identitas serta berbagai layanan yang ditawarkan oleh perusahaan Anda."
+					title="Custom Web Application"
+				/>
+				<ServiceItem
+					image={"/images/assets/service-mobile.png"}
+					colorIcon="black"
+					description="Kami akan membuat sebuah aplikasi berbasis mobile yang akan sangat memudahkan Anda dalam mengakses berbagai layanan dan informasi yang Anda butuhkan."
+					title="Mobile Application"
+				/>
+				<ServiceItem
+					image={"/images/assets/service-tugas.png"}
+					colorIcon="secondary"
+					description="Kamu juga dapat membantu untuk kamu yang kesulitan membuat program untuk tugas kuliah atau skripsi."
+					title="Pembuatan Tugas/Skripsi"
+				/>
+			</div>
 		</div>
 	</div>
-</div>
+</ContainerLayout>

@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets"
 import Heading from "./Heading.astro"
+import { Button } from "./ui/button"
+import PatternBackground from "./PatternBackground.astro"
+import ContainerLayout from "./ContainerLayout.astro"
 
 //dummy
 const projects = [
@@ -43,29 +46,36 @@ const projects = [
 ]
 ---
 
-<div class="flex flex-col space-y-6 md:space-y-24 py-32">
-	<Heading
-		title="Projects"
-		description="Project yang pernah kami kerjakan untuk membantu bisnis client kami"
-	/>
-	<div class="flex justify-center w-full">
-		<div class="grid md:grid-cols-3 gap-6">
-			{
-				projects.map((project) => (
-					<div class="transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none rounded-base shadow-base border-2 border-black group relative w-[300px] h-[300px] overflow-hidden cursor-pointer">
-						<Image
+<ContainerLayout>
+	<div class="flex flex-col space-y-6 md:space-y-12 py-32">
+		<Heading
+			title="Projects"
+			description="Project yang pernah kami kerjakan untuk membantu bisnis client kami"
+		/>
+		<PatternBackground position="right" />
+		<div class="flex flex-col items-center w-full">
+			<div class="grid sm:grid-cols-2 lg:grid-cols-3 md:gap-6 gap-3">
+				<div class="flex sm:col-span-2 lg:col-span-3 w-full justify-end">
+					<Button variant="neutral">Semua Project</Button>
+				</div>
+				{
+					projects.map((project) => (
+						<div class="transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none rounded-base shadow-base border-2 border-black group relative w-[300px] h-[300px] overflow-hidden cursor-pointer">
+							<div class="group-hover:brightness-50 absolute inset-0 bg-slate-400" />
+							{/* <Image
 							class="group-hover:brightness-50 absolute"
 							src={project.thumbnail}
 							width={300}
 							height={300}
 							alt={project.title}
-						/>
-						<div class="bg-main p-4 absolute group-hover:translate-y-0 transition-all duration-100 translate-y-32 bottom-0 w-full">
-							<p>{project.title}</p>
+						/> */}
+							<div class="bg-main p-4 absolute group-hover:translate-y-0 transition-all duration-100 translate-y-32 bottom-0 w-full">
+								<p>{project.title}</p>
+							</div>
 						</div>
-					</div>
-				))
-			}
+					))
+				}
+			</div>
 		</div>
 	</div>
-</div>
+</ContainerLayout>

@@ -23,6 +23,7 @@ import { useToast } from "../ui/use-toast"
 
 const FormRequest = () => {
 	const [name, setName] = useState("")
+	const [phone, setPhone] = useState("")
 	const [framework, setFramework] = useState("")
 	const [description, setDescription] = useState("")
 	const [list, setList] = useState<CardRequestProps[]>([])
@@ -30,12 +31,13 @@ const FormRequest = () => {
 
 	const clear = () => {
 		setName("")
+		setPhone("")
 		setFramework("")
 		setDescription("")
 	}
 
 	const onSubmit = () => {
-		if (!name || !framework) {
+		if (!name || !framework || !phone) {
 			toast({
 				title: "Error!",
 				description: "Please fill the field!",
@@ -48,64 +50,46 @@ const FormRequest = () => {
 	}
 
 	return (
-		<div className="flex py-12 md:flex-row gap-3 flex-col  ">
-			<Card className="md:w-[500px] w-full h-fit">
-				<CardHeader>
-					<CardTitle>Informasi Projek</CardTitle>
-					<CardDescription>Deskripsikan kebutuhan kamu!</CardDescription>
-				</CardHeader>
-				<CardContent>
-					<form>
-						<div className="grid w-full items-center gap-4">
-							<div className="flex flex-col space-y-1.5">
-								<Label>Nama Kamu</Label>
-								<Input
-									value={name}
-									onChange={(e) => setName(e.target.value)}
-									id="name"
-									placeholder="Name of your project"
-								/>
-							</div>
-							<div>
-								<Label>Jenis Aplikasi</Label>
-								<Select
-									value={framework}
-									onValueChange={(e) => setFramework(e)}
-								>
-									<SelectTrigger className="bg-white" id="framework">
-										<SelectValue placeholder="Select" />
-									</SelectTrigger>
-									<SelectContent position="popper">
-										<SelectItem value="Website">Website</SelectItem>
-										<SelectItem value="Mobile App">Mobile App</SelectItem>
-										<SelectItem value="Desktop">Desktop</SelectItem>
-										<SelectItem value="Custom App">Custom App</SelectItem>
-									</SelectContent>
-								</Select>
-							</div>
-							<div>
-								<Textarea
-									placeholder="Describe your app"
-									value={description}
-									onChange={(e) => setDescription(e.target.value)}
-								/>
-							</div>
-						</div>
-					</form>
-				</CardContent>
-				<CardFooter className="flex justify-between">
-					<Button onClick={clear}>Cancel</Button>
-					<Button onClick={onSubmit} className="bg-white">
-						Deploy
-					</Button>
-				</CardFooter>
-			</Card>
-			<div className="flex flex-col space-y-3 w-full md:max-h-[70dvh] overflow-y-auto ">
-				{list.map((item) => (
-					<CardRequest {...item} key={item.name} />
-				))}
+		<form className="max-w-md flex flex-col space-y-3">
+			<div className="flex flex-col space-y-1.5">
+				<Input
+					value={name}
+					onChange={(e) => setName(e.target.value)}
+					id="name"
+					placeholder="Your Name"
+				/>
 			</div>
-		</div>
+			<div className="flex flex-col space-y-1.5">
+				<Input
+					value={name}
+					onChange={(e) => setName(e.target.value)}
+					id="name"
+					placeholder="Phone Number"
+				/>
+			</div>
+			<div>
+				<Select value={framework} onValueChange={(e) => setFramework(e)}>
+					<SelectTrigger className="bg-white" id="framework">
+						<SelectValue placeholder="Project Type" />
+					</SelectTrigger>
+					<SelectContent position="popper">
+						<SelectItem value="website">Website</SelectItem>
+						<SelectItem value="mobileapp">Mobile App</SelectItem>
+						<SelectItem value="custom">Custom App</SelectItem>
+					</SelectContent>
+				</Select>
+			</div>
+			<div>
+				<Textarea
+					placeholder="Describe your app"
+					value={description}
+					onChange={(e) => setDescription(e.target.value)}
+				/>
+			</div>
+			<Button onClick={onSubmit} variant={"black"}>
+				Send
+			</Button>
+		</form>
 	)
 }
 export default FormRequest
