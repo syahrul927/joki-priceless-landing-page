@@ -57,18 +57,23 @@ export default function MenuHeader() {
 		<NavigationMenu className="z-[5] hidden md:block m750:max-w-[300px] border-none">
 			<NavigationMenuList className="m750:max-w-[300px]">
 				<NavigationMenuItem>
-					<a href="/project">
+					<a href="/projects">
 						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
 							<span className="m750:max-w-[80px] m750:text-xs">Project</span>
 						</NavigationMenuLink>
 					</a>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
-					<a href="https://ui.shadcn.com/docs">
+					<a href="/products">
 						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
-							<span className="m750:max-w-[80px] m750:text-xs">
-								Documentation
-							</span>
+							<span className="m750:max-w-[80px] m750:text-xs">Product</span>
+						</NavigationMenuLink>
+					</a>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<a href="/about">
+						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+							<span className="m750:max-w-[80px] m750:text-xs">About</span>
 						</NavigationMenuLink>
 					</a>
 				</NavigationMenuItem>
