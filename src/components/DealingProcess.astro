@@ -1,0 +1,93 @@
+---
+import ContainerLayout from "./ContainerLayout.astro"
+import Heading from "./Heading.astro"
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
+import PatternBackground from "./PatternBackground.astro"
+
+const steps = [
+	{
+		title: "Discovery",
+		description:
+			"Kami memahami kebutuhan proyek Anda dengan melakukan penelitian mendalam untuk menentukan tujuan dan mengembangkan strategi yang disesuaikan.",
+	},
+	{
+		title: "Planning and Strategy",
+		description:
+			"Kami membuat rencana proyek yang komprehensif, menentukan tonggak, garis waktu, hasil, dan alokasi sumber daya, serta menyelaraskan strategi dengan visi Anda.",
+	},
+	{
+		title: "Design",
+		description:
+			"Desainer kami membuat wireframe, mockup, dan prototipe interaktif berdasarkan persyaratan proyek, lalu mengulangi desain sesuai umpan balik hingga mencapai hasil yang sempurna.",
+	},
+	{
+		title: "Development",
+		description:
+			"Tim pengembangan kami membangun produk digital menggunakan teknologi terkini dan praktik terbaik, serta memberikan pembaruan rutin selama proses.",
+	},
+	{
+		title: "Testing and Quality Assurance",
+		description:
+			"Kami melakukan pengujian yang ketat untuk memastikan bahwa produk digital Anda berfungsi dengan sempurna di berbagai perangkat, browser, dan sistem operasi. Tim jaminan kualitas kami secara teliti memeriksa adanya bug, masalah penggunaan, dan hambatan kinerja. Kami berusaha untuk pengalaman pengguna yang lancar dan tingkat keandalan yang tinggi.",
+	},
+	{
+		title: "Deployment and Launch",
+		description:
+			"Setelah produk diuji dan memenuhi kepuasan Anda, kami menangani aspek teknis perilisan, termasuk pengaturan hosting, konfigurasi server, dan integrasi yang diperlukan.",
+	},
+	{
+		title: "Post-Launch Support",
+		description:
+			"Kami menyediakan dukungan dan pemeliharaan berkelanjutan untuk memastikan produk tetap optimal, menawarkan paket dukungan sesuai kebutuhan Anda.",
+	},
+	{
+		title: "Continuous Improvement",
+		description:
+			"Kami proaktif menyarankan perbaikan dan pembaruan untuk menjaga produk digital Anda tetap terdepan bahkan setelah perilisan.",
+	},
+]
+---
+
+<ContainerLayout class="bg-black text-white">
+	<!-- <PatternBackground class="-top-[75%] right-[75%]" position="right" /> -->
+	<div class="flex flex-col space-y-6 md:space-y-12 py-32">
+		<Heading
+			title="Proses"
+			description="Proses kami menggabungkan praktik terbaik industri dan pendekatan yang berpusat pada client"
+		/>
+		<div class="flex flex-col items-center w-full space-y-6">
+			<!-- {
+				steps.map((step, index) => {
+					return (
+						<div class="flex w-full group hover:bg-main hover:text-black rounded-md">
+							<div class="flex relative flex-1 p-6">
+								<h2>{`${String(index + 1).padStart(2, "0")} ${step.title}`}</h2>
+							</div>
+							<div class="flex-1 p-6">
+								<p class="text-lg group-hover:text-black text-muted-foreground">
+									{step.description}
+								</p>
+							</div>
+						</div>
+					)
+				})
+			} -->
+			<div class="grid md:grid-cols-2 md:gap-6 gap-3">
+				{
+					steps.map((step, index) => {
+						return (
+							<Card className=" z-10 bg-black hover:bg-main cursor-default hover:text-black group text-muted-foreground">
+								<CardHeader className="flex group-hover:text-black text-white bg-inherit flex-row items-end gap-3">
+									<h2>{`${String(index + 1).padStart(2, "0")} ${step.title}`}</h2>
+								</CardHeader>
+								<CardContent className="bg-inherit">
+									<p>{step.description}</p>
+								</CardContent>
+							</Card>
+						)
+					})
+				}
+			</div>
+		</div>
+	</div>
+</ContainerLayout>

@@ -1,4 +1,13 @@
-<div class="w-full relative overflow-hidden h-fit">
+---
+import { cn } from "@/lib/utils"
+
+interface Props {
+	class?: string
+}
+const { class: className } = Astro.props
+---
+
+<div class={cn("w-full relative overflow-hidden h-fit", className)}>
 	<div class="container max-w-screen-xl">
 		<slot />
 	</div>

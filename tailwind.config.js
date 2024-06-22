@@ -96,7 +96,7 @@ module.exports = {
 	},
 	plugins: [
 		require("tailwindcss-animate"),
-
+		require("tailwindcss-hero-patterns"),
 		plugin(function ({ matchUtilities, theme }) {
 			matchUtilities(
 				{

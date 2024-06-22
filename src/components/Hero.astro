@@ -5,7 +5,9 @@ import HeroTitle from "./react/HeroTitle"
 import { Button } from "./ui/button"
 ---
 
-<div class="w-full min-h-[70dvh] flex justify-center relative items-center">
+<div
+	class="w-full min-h-[50dvh] md:min-h-[70dvh] flex md:justify-center relative items-start md:pt-0 pt-24 md:items-center"
+>
 	<div
 		class="flex flex-col items-center text-center justify-center md:max-w-2xl space-y-4"
 	>
@@ -18,5 +20,8 @@ import { Button } from "./ui/button"
 			<Button variant={"black"}>Hubungi Kami</Button>
 		</div>
 	</div>
-	<PatternBackground position="center" class="top-0 -translate-y-[20%]" />
+	<PatternBackground
+		position="center"
+		class="top-0 -translate-y-[50%] md:-translate-y-[40%]"
+	/>
 </div>

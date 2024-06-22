@@ -65,6 +65,7 @@
     "tailwind-merge": "^2.3.0",
     "tailwindcss": "^3.4.3",
     "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-hero-patterns": "^0.1.2",
     "typescript": "^5.4.5",
     "vaul": "^0.9.1",
     "zod": "^3.23.8"
