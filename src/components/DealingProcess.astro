@@ -77,10 +77,10 @@ const steps = [
 					steps.map((step, index) => {
 						return (
 							<Card className=" z-10 bg-black hover:bg-main cursor-default hover:text-black group text-muted-foreground">
-								<CardHeader className="flex group-hover:text-black text-white bg-inherit flex-row items-end gap-3">
+								<CardHeader className="flex text-white group-hover:text-black flex-row items-end gap-3">
 									<h2>{`${String(index + 1).padStart(2, "0")} ${step.title}`}</h2>
 								</CardHeader>
-								<CardContent className="bg-inherit">
+								<CardContent className="">
 									<p>{step.description}</p>
 								</CardContent>
 							</Card>
